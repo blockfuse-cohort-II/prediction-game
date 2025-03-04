@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { parseEther } from "viem";
 
 const abi = rawAbi.abi;
-const CONTRACT_ADDRESS = "0x6b135f6B2d1B74C2eDDBff30C47122914E3Bc37c";
+const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS;
 
 export const useGuessGame = () => {
   const { isConnected, address } = useAccount();
