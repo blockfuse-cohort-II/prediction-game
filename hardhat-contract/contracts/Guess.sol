@@ -91,7 +91,6 @@ contract GuessGame {
     function _generateCorrectAnswers() internal {
         address player = msg.sender;
         // require(players[player].hasPlayed, "Player has not played");
-
         uint256[QUESTIONS_PER_GAME] memory generatedAnswers;
         for (uint256 i = 0; i < QUESTIONS_PER_GAME; i++) {
             generatedAnswers[i] = uint256(keccak256(abi.encodePacked(block.timestamp, block.prevrandao, player, i))) % 2;
